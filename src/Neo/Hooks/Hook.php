@@ -445,7 +445,7 @@ class Hook {
 			}
 
 		}
-		while (next($this->filters[$tag]) !== false_);
+		while (next($this->filters[$tag]) !== false);
 
 		array_pop($this->current_filter);
 	}
