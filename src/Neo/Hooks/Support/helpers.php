@@ -76,7 +76,7 @@ if ( ! function_exists('apply_filters'))
 	 */
 	function apply_filters($tag, $value)
 	{
-		return Hook::instance()->apply_filters($tag, $value);
+		return call_user_func_array(array(Hook::instance(), 'apply_filters'), func_get_args());
 	}
 }
 
@@ -90,7 +90,7 @@ if ( ! function_exists('apply_filters_ref_array'))
 	 */
 	function apply_filters_ref_array($tag, $args)
 	{
-		return Hook::instance()->apply_filters_ref_array($tag, $args);
+		return call_user_func_array(array(Hook::instance(), 'apply_filters_ref_array'), func_get_args());
 	}
 }
 
@@ -175,7 +175,7 @@ if ( ! function_exists('do_action'))
 	 */
 	function do_action($tag, $arg = '')
 	{
-		return Hook::instance()->do_action($tag, $arg);
+		return call_user_func_array(array(Hook::instance(), 'do_action'), func_get_args());
 	}
 }
 
@@ -189,7 +189,7 @@ if ( ! function_exists('do_action_ref_array'))
      */
     function do_action_ref_array($tag, $args)
     {
-    	return Hook::instance()->do_action_ref_array($tag, $args);
+		return call_user_func_array(array(Hook::instance(), 'do_action_ref_array'), func_get_args());
     }
 }
 
